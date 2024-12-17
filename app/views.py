@@ -11,7 +11,7 @@ def home(request):
     context={
         'courses':courses,
         }
-    return render(request,'main.html',context)
+    return render(request,'index.html',context)
 
 def createCourse(request):
     if request.user.is_authenticated:
