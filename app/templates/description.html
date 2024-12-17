@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static%}
+{% block content %}
+<head>
+    <style>
+        div{
+        margin:auto;
+        padding: 40px;
+        width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" style="width: 32rem;">
+        <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.mq9G2Qtebo1uIOdCSkCUfgHaEL&pid=Api&rs=1&c=1&qlt=95&w=218&h=123" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{course.name}}</h5>
+          <p class="card-text">{{course.decsription}}</p>
+          <p><b>Fees</b> {{course.fees}}/-</p>
+          <p><b>Duration</b> {{course.duration}} years</p>
+          <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+        </div>
+      </div>
+</body>
+{% endblock %}

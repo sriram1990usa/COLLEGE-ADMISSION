@@ -1,0 +1,29 @@
+<head>
+  <style>
+    .msg{
+      color:white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">HOME</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+      <ul class="navbar-nav mr-auto">
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'createCourse' %}">Add more courses</a>
+        </li>
+        {% endif  %}
+      </ul>
+    </div>
+    {% if request.user.is_authenticated %}
+    <span class="msg">Hello, {{request.user}}  &nbsp;</span>
+    <span ><a  class="msg btn btn-info" href ="{% url 'logout' %}"> Logout</a></span>
+    {% endif  %}
+  </nav>
